@@ -33,7 +33,7 @@ if [ "$(cat /etc/hostname)" == "pg01" ]; then
     rm -rf vm*
     cat <<EOF > /etc/systemd/system/vmagent.service
 [Unit]
-Description=vmagent service
+Description=VMagent
 After=network.target
 
 [Service]
@@ -59,7 +59,17 @@ fi
 # Install Grafana server
 if [ "$(cat /etc/hostname)" == "pg01" ]; then
     sudo yum install -y https://dl.grafana.com/oss/release/grafana-11.2.2-1.x86_64.rpm chkconfig
-    
+    mkdir -p /etc/grafana/provisioning/datasources
+    cat <<EOF > /etc/grafana/provisioning/datasources/datasource.yml
+apiVersion: 1
+
+datasources:
+  - name: VictoriaMetrics
+    type: prometheus
+    access: proxy
+    url: http://localhost:8428
+    isDefault: true
+EOF
 fi
 
 # Start all daemons

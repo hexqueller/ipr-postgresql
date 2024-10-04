@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
       node.vm.provision "shell", path: "install-pg.sh"
       node.vm.provision "shell", path: "configure-pg.sh"
       node.vm.provision "shell", path: "install-monitoring.sh"
+      node.vm.provision "shell", path: "postgres-exporter.sh"
     end
   end
 end

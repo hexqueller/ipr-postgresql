@@ -8,6 +8,7 @@ echo "listen_addresses = '*'" >> /usr/local/pgsql/data/postgresql.conf
 
 # pg_hba.conf
 echo "host    replication     all             10.0.0.98/32            trust" >> /usr/local/pgsql/data/pg_hba.conf
+echo "host    all             vagrant         10.0.0.2/32             trust" >> /usr/local/pgsql/data/pg_hba.conf
 
 # Standby
 if [ "$(cat /etc/hostname)" == "pg01s" ]; then
