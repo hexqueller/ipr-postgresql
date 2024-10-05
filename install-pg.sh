@@ -11,6 +11,14 @@ cd postgresql
 make
 make install
 
+# dblink
+make -C contrib/dblink
+make -C contrib/dblink install
+
+# pg_stat_statements
+make -C contrib/pg_stat_statements
+make -C contrib/pg_stat_statements install
+
 sudo mkdir -p /usr/local/pgsql/data
 sudo chown vagrant /usr/local/pgsql/data
 

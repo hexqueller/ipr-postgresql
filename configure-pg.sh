@@ -23,4 +23,4 @@ if [ "$(cat /etc/hostname)" == "pg01s" ]; then
 fi
 
 # Start PostgreSQL
-sudo -u vagrant bash -c 'source /home/vagrant/.bashrc && /usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start'
+sudo -u vagrant bash -c 'source /home/vagrant/.bashrc && /usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l /home/vagrant/logfile start'
