@@ -4,8 +4,11 @@
 yum install git make gcc tar gzip bzip2 flex perl readline-devel zlib-devel pkgconfig libicu-devel bison -y
 
 git config --global http.version HTTP/1.1 # Фикс ошибки HTTP2
-git clone https://git.postgresql.org/git/postgresql.git
-cd postgresql
+# git clone https://git.postgresql.org/git/postgresql.git
+# cd postgresql
+git clone https://github.com/postgres/postgres.git
+cd postgres
+git checkout REL_17_STABLE
 ./configure
 
 make

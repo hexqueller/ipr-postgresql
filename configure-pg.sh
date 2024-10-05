@@ -6,6 +6,14 @@ echo "max_wal_senders = 10" >> /usr/local/pgsql/data/postgresql.conf
 echo "wal_keep_size = 64" >> /usr/local/pgsql/data/postgresql.conf
 echo "listen_addresses = '*'" >> /usr/local/pgsql/data/postgresql.conf
 
+# pg_profile config in postgresql.conf
+echo "track_activities = on" >> /usr/local/pgsql/data/postgresql.conf
+echo "track_counts = on" >> /usr/local/pgsql/data/postgresql.conf
+echo "track_io_timing = on" >> /usr/local/pgsql/data/postgresql.conf
+echo "track_wal_io_timing = on" >> /usr/local/pgsql/data/postgresql.conf
+echo "track_functions = all" >> /usr/local/pgsql/data/postgresql.conf
+echo "shared_preload_libraries = 'pg_stat_statements'" >> /usr/local/pgsql/data/postgresql.conf
+
 # pg_hba.conf
 echo "host    replication     all             10.0.0.98/32            trust" >> /usr/local/pgsql/data/pg_hba.conf
 echo "host    all             vagrant         10.0.0.2/32             trust" >> /usr/local/pgsql/data/pg_hba.conf
