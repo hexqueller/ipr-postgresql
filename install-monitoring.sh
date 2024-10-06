@@ -70,6 +70,20 @@ datasources:
     url: http://localhost:8428
     isDefault: true
 EOF
+  cd $INSTALL_DIR
+  wget -O $INSTALL_DIR/postgresql.json https://grafana.com/api/dashboards/9628/revisions/7/download
+    cat <<EOF > /etc/grafana/provisioning/dashboards/dashboard.yml
+apiVersion: 1
+providers:
+- name: 'postgresql'
+  orgId: 1
+  folder: ''
+  type: file
+  disableDeletion: false
+  updateIntervalSeconds: 10 
+  options:
+    path: $INSTALL_DIR/postgresql.json 
+EOF
 fi
 
 # Start all daemons

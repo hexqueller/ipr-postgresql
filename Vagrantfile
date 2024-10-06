@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
 
   machines = [
-    { name: "pg01", ip: "10.0.0.99" },
-    { name: "pg01s", ip: "10.0.0.98" }
+    { name: "pg01", ip: "10.0.0.99" }
+    # { name: "pg01s", ip: "10.0.0.98" }
   ]
 
   machines.each do |machine|
