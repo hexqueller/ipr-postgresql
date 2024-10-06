@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Dmitry_Besedin
+      changes:
+        - addColumn:
+            tableName: students
+            columns:
+              - column:
+                  name: score
+                  type: int

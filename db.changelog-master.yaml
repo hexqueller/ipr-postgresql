@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/1-create-example-table.yaml
   - include:
       file: db/changelog/2-add-group-column.yaml
+  # - include:
+  #     file: db/changelog/3-add-score-column.yaml
