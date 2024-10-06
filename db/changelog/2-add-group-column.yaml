@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Dmitry_Besedin
+      changes:
+        - addColumn:
+            tableName: students
+            columns:
+              - column:
+                  name: group
+                  type: varchar(255)

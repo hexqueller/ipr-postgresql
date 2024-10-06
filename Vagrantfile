@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
 
   machines = [
-    { name: "pg01", ip: "10.0.0.99" }
-    # { name: "pg01s", ip: "10.0.0.98" }
+    { name: "pg01", ip: "10.0.0.99" },
+    { name: "pg01s", ip: "10.0.0.98" }
   ]
 
   machines.each do |machine|
@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
       node.vm.provision "shell", path: "install-monitoring.sh"
       node.vm.provision "shell", path: "postgres-exporter.sh"
       node.vm.provision "shell", path: "install-pg_profile.sh"
+      node.vm.provision "shell", path: "install-liquibase.sh"
     end
   end
 end
