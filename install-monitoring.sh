@@ -69,6 +69,15 @@ datasources:
     access: proxy
     url: http://localhost:8428
     isDefault: true
+  - name: PostgreSQL
+    type: postgres
+    url: pg01:5432
+    database: postgres 
+    user: vagrant
+    jsonData:
+      sslmode: "disable" 
+      postgresVersion: 1200
+      timescaledb: true
 EOF
   cd $INSTALL_DIR
   wget -O $INSTALL_DIR/postgresql.json https://grafana.com/api/dashboards/9628/revisions/7/download
