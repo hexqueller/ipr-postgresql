@@ -17,6 +17,7 @@ echo "shared_preload_libraries = 'pg_stat_statements'" >> /usr/local/pgsql/data/
 # pg_hba.conf
 echo "host    replication     all             10.0.0.98/32            trust" >> /usr/local/pgsql/data/pg_hba.conf
 echo "host    all             vagrant         10.0.0.2/32             trust" >> /usr/local/pgsql/data/pg_hba.conf
+echo "host    all             dmitry          10.0.0.2/32             trust" >> /usr/local/pgsql/data/pg_hba.conf
 
 # Standby
 if [ "$(cat /etc/hostname)" == "pg01s" ]; then
