@@ -8,7 +8,7 @@ execute_command() {
     echo -e "\n=================================================="
     echo -e "$description"
     echo -e "-> $command\n"
-    eval $command
+    eval "$command"
     echo -e "\n=================================================="
     echo "Enter для продолжения..."
     read -r
